@@ -1,4 +1,36 @@
-@font-face {
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@rennahweng 
+This repository has been archived by the owner. It is now read-only.
+dormroomfund
+/
+fft-www
+Archived
+3
+0
+1
+Code
+Pull requests
+Actions
+Security
+Insights
+Settings
+fft-www/css/main.css
+@albertzhidong
+albertzhidong Mobile CSS fixes
+Latest commit 76580d1 on May 21, 2019
+ History
+ 2 contributors
+@casey-chow@albertzhidong
+710 lines (687 sloc)  12.6 KB
+  
+/*@font-face {
   font-family: Gibson;
   font-style: normal;
   src: url("./fonts/Gibson-Regular.otf");
@@ -25,13 +57,46 @@ html {
   margin: 0 auto;
   max-width: 1500px;
   font-family: Gibson;
+}*/
+
+
+@font-face {
+  font-family: CircularStd;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/CircularStd-Medium.otf");
 }
+@font-face {
+  font-family: CircularStd;
+  font-weight: 600;
+  font-style: normal;
+  src: url("./fonts/CircularStd-Bold.otf");
+}
+@font-face {
+  font-family: CircularStd;
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/CircularStd-Black.otf");
+}
+@font-face {
+  font-family: CircularStd;
+  font-weight: 300;
+  font-style: normal;
+  src: url("./fonts/CircularStd-Book.otf");
+}
+html {
+  margin: 0 auto;
+  max-width: 1500px;
+  font-family: CircularStd;
+}
+
+
 body {
   margin: 0;
 }
 @media (max-width: 479px) {
   body .logo {
-    margin-top: 30px;
+    margin-top: 0px;
   }
   body .page-title {
     margin-top: 30px;
@@ -173,7 +238,7 @@ button:focus {
   outline: none;
 }
 .subheading {
-  font-size: 33.5px;
+  font-size: 24.9px;
   font-weight: 300;
   color: #3f3d3c;
 }
@@ -181,15 +246,18 @@ button:focus {
   display: flex;
   justify-content: flex-end;
 }
+
 #header-track {
   position: absolute;
-  width: 79%;
+  width: 100%; //79%
   max-width: 1185px;
   z-index: -1;
+  opacity: .9 !important;
 }
 .content {
   margin: 0 175.5px;
 }
+
 @media (max-width: 1025px) {
   .content {
     margin: 0 54.5px;
@@ -205,11 +273,55 @@ button:focus {
     margin: 0 14.5px;
   }
 }
-.logo {
+
+#header{
   margin-top: 108px;
-  height: 88px;
-  width: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+#applybutton{
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0,0,0, .15), 0px 1.5px 3px rgba(0,0,0, .40);
+  border-radius: 50px;
+  padding: 1.2% 5% 1.1% 5%;
+  color: #DA1301;
+  font-size: 1.05rem;
+  font-family: CircularStd;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+  max-height: 50px;
+}
+
+@media (max-width: 767px) {
+  #applybutton {
+    padding: 2% 7.5% 1.9% 7.5%;
+  }
+}
+
+#applybutton:hover{
+  box-shadow: 0px 1px 3px rgba(0,0,0, .1), 0px .5px 2px rgba(0,0,0, .20);
+}
+
+#headericons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 25px;
+}
+
+.small_logo{
+  height: 40px;
+  margin-right: 25px;
+  margin-top: 25px;
+}
+
 .image-container {
   display: flex;
   flex-direction: column;
@@ -249,7 +361,7 @@ button:focus {
   margin-right: 24.5px;
 }
 .page-title {
-  margin-top: 200px;
+  margin-top: 175px;
   max-width: 895px;
 }
 .page-title h1 {
@@ -258,11 +370,20 @@ button:focus {
   font-size: 54.3px;
 }
 .page-title .page-subtitle {
-  line-height: 1.24;
-  font-size: 54.3px;
+  line-height: 1.4;
+  font-size: 30px;
+  font-weight: 300;
 }
+
+#DRFsubtext{
+  color: rgba(150,150,150,1);
+  font-size: 24px;
+  margin-top: 10px;
+  padding: 0;
+}
+
 .description {
-  margin-top: 125px;
+  margin-top: 100px;
   max-width: 930px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 33.5px;
@@ -274,6 +395,11 @@ button:focus {
   border-bottom: 2px solid #2c2e2d;
   text-decoration: none;
 }
+
+.d2{
+  margin-top: 50px;
+}
+
 .more {
   margin-top: 145px;
   font-size: 33.5px;
@@ -282,7 +408,7 @@ button:focus {
   margin-bottom: 5px;
 }
 .more p {
-  margin-top: 46.5px;
+/*  margin-top: 46.5px;*/
   max-width: 933px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24.9px;
@@ -292,19 +418,19 @@ button:focus {
 .apply {
   margin-top: 137.5px;
   padding: 60px 0;
-  background-color: #e2f9f3;
+  background-color: #Da1301;
 }
 .apply .title-section {
-  color: #018062;
+  color: #DA1301;
   font-size: 33.5px;
   line-height: 1.12;
 }
 .apply .title-section .subheading {
-  color: #018062;
+  color: #FFFFFF;
 }
 .apply .title-section .subheading a {
-  color: #018062;
-  border-bottom: 2px solid #018062;
+  color: #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
   text-decoration: none;
 }
 .apply .tracks {
@@ -364,6 +490,15 @@ button:focus {
 .testimonials {
   margin-top: 148.5px;
 }
+
+.testimonials p{
+  max-width: 933px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24.9px;
+  line-height: 1.51;
+  color: #37383c;
+}
+
 .testimonials #body-track {
   position: absolute;
   width: 41%;
@@ -398,8 +533,9 @@ button:focus {
   background-color: #fff;
   box-shadow: 0px 10.5px 31px 0 rgba(76,76,76,0.1);
   margin-left: -100px;
-  margin-top: 190px;
-  padding: 75.5px 109.5px 71px 69.5px;
+  margin-top: 250px;
+  margin-bottom: 200px;
+  padding: 25px 75px 50px 75px;
 }
 @media (max-width: 1398px) {
   .testimonials .copy {
@@ -408,20 +544,29 @@ button:focus {
 }
 @media (max-width: 1025px) {
   .testimonials .copy {
-    padding: 15px;
-    box-shadow: none;
-    margin-left: 0;
-    margin-top: 20px;
+    padding: 25px;
+    margin-left: -50px;
+    margin-top: 50px;
+    margin-bottom: 250px;
   }
 }
 @media (max-width: 767px) {
   .testimonials .copy {
-    padding: 15px;
+    padding: 25px;
+    margin-left: -50px;
+    margin-top: 20px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonials .copy {
     box-shadow: none;
     margin-left: 0;
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 50px;
   }
 }
 @media (max-width: 479px) {
@@ -429,6 +574,9 @@ button:focus {
     box-shadow: none;
     margin-left: 0;
     margin-top: 20px;
+    margin-bottom: 50px;
+    padding-left: 55px;
+    padding-top: 0px;
   }
 }
 .testimonials .copy .body {
@@ -448,7 +596,7 @@ button:focus {
   line-height: 1.3;
 }
 .curriculum {
-  margin-top: 183.5px;
+  margin-top: 150px;
 }
 .curriculum p {
   font-family: 'Source Sans Pro', sans-serif;
@@ -495,12 +643,12 @@ button:focus {
 }
 .curriculum .list-container .list .arrow {
   width: 22.5px;
-  height: 10px;
+  height: 12.5px;
   margin-right: 31px;
   padding-top: 10px;
 }
 .previous-guides {
-  margin-top: 200px;
+  margin-top: 150px;
 }
 .previous-guides .container {
   display: flex;
@@ -537,6 +685,7 @@ button:focus {
   margin-top: 172.5px;
   background-color: #000;
   color: #fff;
+  width: 100%;
 }
 .faq {
   padding-top: 126px;
@@ -576,4 +725,18 @@ button:focus {
   color: #fff;
   border-bottom: 2px solid #fff;
   text-decoration: none;
+}
+
+li{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 22.4px;
+  line-height: 1.5;
+  color: #37383c;
+  max-width: 933px;
+  margin-top: 8px;
+}
+
+.heavyWeight{
+  font-weight: bold;
 }
